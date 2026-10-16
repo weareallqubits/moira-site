@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Moira reads your life through seven ancient systems and tells you what to do with it. Your thread, beautifully read.">
 <meta name="theme-color" content="#0b0907">
-<meta property="og:title" content="Moira">
+<meta property="og:title" content="Moira · Coming soon">
 <meta property="og:description" content="Moira reads your life through seven ancient systems and tells you what to do with it. Your thread, beautifully read.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://moira-app.com/">
@@ -14,7 +14,7 @@
 <link rel="canonical" href="https://moira-app.com/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Crect x='-50' y='-50' width='100' height='100' rx='22' fill='%230b0907'/%3E%3Cpath d='M0,-38 C2,-9 3.4,-3.4 26,0 C3.4,3.4 2,9 0,38 C-2,9 -3.4,3.4 -26,0 C-3.4,-3.4 -2,-9 0,-38Z' fill='%23e9b97f'/%3E%3C/svg%3E">
 <style>*,*::before,*::after{box-sizing:border-box}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Moira</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap">
@@ -330,6 +330,18 @@ body:not(.entered) #gn{pointer-events:none}
   #cue i::after{animation:none;top:16px}
 }
 </style>
+<style>
+/* coming soon */
+.side.soon{top:calc(100% + 2.4rem)}
+.soon-t{margin:0;font-family:var(--sans);font-weight:300;font-size:clamp(.62rem,.9vw,.78rem);letter-spacing:.62em;text-transform:uppercase;color:var(--ash);opacity:0;animation:soonIn 2.6s var(--slow) 3.4s forwards}
+.side.l .soon-t{margin-right:-.62em}
+.side.r .soon-t{animation-delay:3.75s}
+@keyframes soonIn{from{opacity:0;filter:blur(8px);letter-spacing:.9em}to{opacity:1;filter:none;letter-spacing:.62em}}
+body,body *{cursor:default!important}
+#cur{display:none!important}
+@media (prefers-reduced-motion:reduce){.soon-t{animation:none;opacity:1}}
+</style>
+<title>Moira · Coming soon</title>
 </head>
 <body>
 <canvas id="gl" aria-hidden="true"></canvas>
@@ -342,11 +354,10 @@ body:not(.entered) #gn{pointer-events:none}
   <div class="stack">
     <h1 class="sr">Moira. Your thread, beautifully read.</h1>
     <div class="mark b" data-at="0" id="mark"><span class="mo" aria-hidden="true">MO</span><span class="ii" id="ii" aria-hidden="true">I</span><span class="star" aria-hidden="true"><span class="star-tw"><svg viewBox="-50 -50 100 100"><circle r="13" fill="url(#starH)"/><path d="M0,-24 C1.3,-5 2,-2 24,0 C2,2 1.3,5 0,24 C-1.3,5 -2,2 -24,0 C-2,-2 -1.3,-5 0,-24Z" fill="url(#starG)" opacity=".7" transform="rotate(45)"/><path d="M0,-50 C2.6,-12 4.5,-4.5 34,0 C4.5,4.5 2.6,12 0,50 C-2.6,12 -4.5,4.5 -34,0 C-4.5,-4.5 -2.6,-12 0,-50Z" fill="url(#starG)"/><circle r="3.2" fill="#fffdf8"/><defs><radialGradient id="starH"><stop offset="0" stop-color="#ffe7c4" stop-opacity=".55"/><stop offset="1" stop-color="#e9b97f" stop-opacity="0"/></radialGradient><radialGradient id="starG"><stop offset="0" stop-color="#fffaf2"/><stop offset=".35" stop-color="#ffe7c4"/><stop offset="1" stop-color="#e9b97f"/></radialGradient></defs></svg></span></span><span class="ra" aria-hidden="true">RA</span>
-      <div class="side l"><p class="holdhint b" data-at="0" id="hh"><b>Press and hold</b><br>to draw your thread</p></div>
-      <div class="side r"><p class="tag b" data-at="0">Your thread,<br>beautifully read</p></div>
+      <div class="side l soon"><p class="soon-t">Coming</p></div>
+      <div class="side r soon"><p class="soon-t">Soon</p></div>
     </div>
   </div>
-  <p class="etym b" data-at="0"><em>moira</em>, from the Greek: your portion. The thread of life that is yours and no one else&#8217;s.</p>
 </section>
 
 <!-- I Light -->
@@ -693,7 +704,7 @@ body:not(.entered) #gn{pointer-events:none}
 
 <nav id="gn" aria-label="Rooms"><i id="gdot"></i><span id="gnum"></span></nav>
 <div id="cue"><p><span>onward</span><em id="cueTo">into Form</em></p><i></i></div>
-<div id="snd" role="button" tabindex="0" aria-pressed="true" aria-label="Sound"><svg viewBox="0 0 42 14"><path id="sndp" d="M0 7H42"/></svg><span id="sndl">Sound</span></div>
+<div id="snd" hidden role="button" tabindex="-1" aria-pressed="true" aria-label="Sound"><svg viewBox="0 0 42 14"><path id="sndp" d="M0 7H42"/></svg><span id="sndl">Sound</span></div>
 <div id="cur" aria-hidden="true"><svg viewBox="0 0 44 44"><circle class="bg" cx="22" cy="22" r="14"/><circle class="fg" id="curfg" cx="22" cy="22" r="14" stroke-dasharray="88" stroke-dashoffset="88" transform="rotate(-90 22 22)"/></svg><i class="dot"></i></div>
 
 <script>
@@ -1157,7 +1168,7 @@ addEventListener("keydown", e => {
 });
 addEventListener("keyup", e => { if (cur === 0 && (e.key === " " || e.key === "Enter")) holding = false; });
 
-function startHold() { if (cur !== 0 || trans) return; holding = true; snd.init(); }
+function startHold() { /* coming soon: the threshold stays closed */ }
 addEventListener("pointerdown", e => {
   ptr.x = e.clientX / W; ptr.y = e.clientY / H; ptr.down = true; ptr.id = e.pointerId; ptr.lastY = e.clientY; ptr.lastT = now(); ptr.moved = 0; vel = 0;
   ptr.owned = !!(e.target.closest && e.target.closest(".word,.send,.v,#snd,.tk,#again,#cue,.mail,.thread,.lnk,.tl,.ck-link,.signin"));
