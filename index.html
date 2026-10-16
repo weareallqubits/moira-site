@@ -81,19 +81,21 @@ body{font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;
 
 /* threshold */
 #r0 .stack{position:absolute;left:0;right:0;top:50%;transform:translateY(-58%)}
-.mark{position:relative;height:1em;font-family:var(--serif);font-weight:300;font-size:clamp(3.6rem,12vw,11.5rem);letter-spacing:.16em;line-height:1;--gap:20px}
+.mark{position:relative;height:1em;font-family:"Cormorant","Cormorant Garamond",Garamond,"Times New Roman",serif;font-weight:300;font-style:normal;font-size:clamp(4.4rem,15vw,13.5rem);letter-spacing:.035em;line-height:1;--gap:20px}
+.mark .wm{position:absolute;top:0;left:50%;white-space:nowrap;color:#efe6d8;text-shadow:0 0 60px rgba(233,185,127,.18);transform:translateX(var(--wx,-50%));font-kerning:normal}
+.mark .wm .ii{position:static;transform:none;color:inherit;text-shadow:inherit;letter-spacing:inherit}
 .mark span{position:absolute;top:0;transition:filter 2.4s var(--slow),opacity 2.4s var(--slow)}
 .mark .mo{right:calc(50% + var(--gap));margin-right:-.16em}
 .mark .ra{left:calc(50% + var(--gap))}
-.mark .star{position:absolute;left:50%;top:-.62em;width:.52em;height:.52em;margin-left:-.26em;pointer-events:none;opacity:0;animation:starfall 2.8s cubic-bezier(.16,.84,.3,1) .9s forwards}
+.mark .star{position:absolute;left:var(--sx,50%);top:var(--sy,.2em);width:.31em;height:.31em;margin:-.155em 0 0 -.155em;pointer-events:none;opacity:0;animation:starfall 2.8s cubic-bezier(.16,.84,.3,1) .9s forwards}
 .mark .star::before{content:"";position:absolute;left:50%;bottom:50%;width:1px;margin-left:-.5px;height:0;background:linear-gradient(rgba(255,236,210,0),rgba(255,236,210,.85));animation:startail 2.8s cubic-bezier(.16,.84,.3,1) .9s forwards}
-.star-tw{position:absolute;inset:0;display:block;transform:scale(calc(1 + var(--hold,0) * .55));transition:transform .3s;filter:drop-shadow(0 0 .04em #fff3e0) drop-shadow(0 0 .12em rgba(233,185,127,.9)) drop-shadow(0 0 .3em rgba(233,185,127,.55))}
+.star-tw{position:absolute;inset:0;display:block;filter:drop-shadow(0 0 .02em #fff3e0) drop-shadow(0 0 .06em rgba(233,185,127,.85)) drop-shadow(0 0 .16em rgba(233,185,127,.45))}
 .star-tw svg{width:100%;height:100%;display:block;overflow:visible;animation:twinkle 5.5s ease-in-out 3.7s infinite;transform-origin:50% 50%}
 @keyframes starfall{0%{opacity:0;transform:translateY(-62vh) scale(.25)}12%{opacity:1}78%{transform:translateY(.04em) scale(1.06)}100%{opacity:1;transform:none}}
 @keyframes startail{0%{height:0}15%{height:34vh}70%{height:10vh;opacity:.8}100%{height:0;opacity:0}}
 @keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}45%{transform:scale(1.12) rotate(4deg)}55%{transform:scale(.94) rotate(3deg)}}
-.mark .ii{left:50%;transform:translateX(-50%);color:#fff6ea;text-shadow:0 0 18px rgba(255,236,210,.9),0 0 46px rgba(233,185,127,.75),0 0 110px rgba(233,185,127,.45);letter-spacing:0}
-.mark span{text-shadow:0 0 60px rgba(233,185,127,.18)}
+
+
 .side{position:absolute;top:calc(100% + 2.2rem);letter-spacing:normal;font-size:1rem;width:min(40vw,22rem);display:grid;gap:10px}
 .side.l{right:calc(50% + 28px);text-align:right}
 .side.r{left:calc(50% + 28px)}
@@ -341,6 +343,7 @@ body:not(.entered) #gn{pointer-events:none}
 </style>
 <style>
 /* coming soon */
+@media (max-width:760px){.mark{font-size:22vw}}
 .side.soon{top:calc(100% + 2.4rem)}
 .soon-t{margin:0;font-family:var(--sans);font-weight:300;font-size:clamp(.62rem,.9vw,.78rem);letter-spacing:.62em;text-transform:uppercase;color:var(--ash);opacity:0;animation:soonIn 2.6s var(--slow) 3.4s forwards}
 .side.l .soon-t{margin-right:-.62em}
@@ -363,7 +366,7 @@ body,body *{cursor:default!important}
 <section class="room on" id="r0" aria-label="Threshold">
   <div class="stack">
     <h1 class="sr">Moira. Your thread, beautifully read.</h1>
-    <div class="mark b" data-at="0" id="mark"><span class="mo" aria-hidden="true">MO</span><span class="ii" id="ii" aria-hidden="true">I</span><span class="star" aria-hidden="true"><span class="star-tw"><svg viewBox="-50 -50 100 100"><circle r="13" fill="url(#starH)"/><path d="M0,-24 C1.3,-5 2,-2 24,0 C2,2 1.3,5 0,24 C-1.3,5 -2,2 -24,0 C-2,-2 -1.3,-5 0,-24Z" fill="url(#starG)" opacity=".7" transform="rotate(45)"/><path d="M0,-50 C2.6,-12 4.5,-4.5 34,0 C4.5,4.5 2.6,12 0,50 C-2.6,12 -4.5,4.5 -34,0 C-4.5,-4.5 -2.6,-12 0,-50Z" fill="url(#starG)"/><circle r="3.2" fill="#fffdf8"/><defs><radialGradient id="starH"><stop offset="0" stop-color="#ffe7c4" stop-opacity=".55"/><stop offset="1" stop-color="#e9b97f" stop-opacity="0"/></radialGradient><radialGradient id="starG"><stop offset="0" stop-color="#fffaf2"/><stop offset=".35" stop-color="#ffe7c4"/><stop offset="1" stop-color="#e9b97f"/></radialGradient></defs></svg></span></span><span class="ra" aria-hidden="true">RA</span>
+    <div class="mark b" data-at="0" id="mark"><span class="wm" id="wm" aria-hidden="true">Mo<span class="ii" id="ii">ı</span>ra</span><span class="star" id="star" aria-hidden="true"><span class="star-tw"><svg viewBox="-50 -50 100 100"><defs><radialGradient id="sg"><stop offset="0" stop-color="#fffdf8"/><stop offset=".3" stop-color="#fff0d8"/><stop offset="1" stop-color="#e9c48f"/></radialGradient><radialGradient id="sh"><stop offset="0" stop-color="#ffe7c4" stop-opacity=".6"/><stop offset="1" stop-color="#e9b97f" stop-opacity="0"/></radialGradient></defs><circle r="16" fill="url(#sh)"/><path transform="rotate(45)" d="M0,-25 C1.4,-6 2.4,-2.4 25,0 C2.4,2.4 1.4,6 0,25 C-1.4,6 -2.4,2.4 -25,0 C-2.4,-2.4 -1.4,-6 0,-25Z" fill="url(#sg)"/><path d="M0,-50 C2.2,-11 4,-4 50,0 C4,4 2.2,11 0,50 C-2.2,11 -4,4 -50,0 C-4,-4 -2.2,-11 0,-50Z" fill="url(#sg)"/><circle r="3.6" fill="#fffdf8"/></svg></span></span>
       <div class="side l soon"><p class="soon-t">Coming</p></div>
       <div class="side r soon"><p class="soon-t">Soon</p></div>
     </div>
@@ -919,7 +922,7 @@ function drawPoolText() {
 function resize() {
   W = innerWidth; H = innerHeight; DPR = Math.min(devicePixelRatio || 1, W < 760 ? 1.5 : 1.75);
   if (useGL) { cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR); gl.viewport(0, 0, cv.width, cv.height); drawPoolText(); }
-  buildTrace(); buildRing(); buildRibbon(); placeTicks();
+  buildTrace(); buildRing(); buildRibbon(); placeTicks(); placeMark();
 }
 
 /* ---------- overlays in image space ---------- */
@@ -1085,6 +1088,29 @@ function roomOne(dt, active, pp) {
   rd1.L += (rd1.Lt - rd1.L) * (1 - Math.pow(.02, dt));
   rd1.k = 1 - rd1.L * .06;
   rd1.lift = rd1.L * .07;
+}
+
+/* ---------- wordmark: centre the dotless i on the beam, star in the dot position ---------- */
+function placeMark() {
+  const mark = $("#mark"), wm = $("#wm"), ii = $("#ii"); if (!mark || !wm) return;
+  const fs = parseFloat(getComputedStyle(mark).fontSize);
+  const wr = wm.getBoundingClientRect(), ir = ii.getBoundingClientRect();
+  const ic = ir.left + ir.width / 2 - wr.left;
+  const c = document.createElement("canvas"), g = c.getContext("2d"), N = 400;
+  c.width = N; c.height = N; g.font = `300 ${N * .6}px ${getComputedStyle(mark).fontFamily}`; g.textBaseline = "alphabetic";
+  const ink = t => { g.clearRect(0, 0, N, N); g.fillText(t, N * .3, N * .8); return g.getImageData(0, 0, N, N).data; };
+  const a = ink("i"), b = ink("\u0131"); let y0 = N, y1 = -1, x0 = N, x1 = -1;
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) { const k = (y * N + x) * 4 + 3; if (a[k] > 80 && b[k] < 20) { if (y < y0) y0 = y; if (y > y1) y1 = y; if (x < x0) x0 = x; if (x > x1) x1 = x; } }
+  const scale = fs / (N * .6);
+  let dotY = y1 > 0 ? ((y0 + y1) / 2 - N * .8) * scale : -.62 * fs;   /* relative to baseline */
+  const asc = (() => { const m = g.measureText("M"); return (m.fontBoundingBoxAscent || N * .6 * .9) * scale; })();
+  const lineTop = (fs - (asc + ((g.measureText("M").fontBoundingBoxDescent || N * .6 * .25) * scale))) / 2;
+  const base = lineTop + asc;
+  const dotX = y1 > 0 ? (((x0 + x1) / 2 - N * .3) * scale) : ir.width / 2;
+  const iiLeftInWm = ir.left - wr.left;
+  mark.style.setProperty("--wx", `${(-(iiLeftInWm + dotX)).toFixed(1)}px`);
+  mark.style.setProperty("--sx", "50%");
+  mark.style.setProperty("--sy", `${(base + dotY).toFixed(1)}px`);
 }
 /* ---------- hold mechanic: hold is how you commit ---------- */
 const holds = []; let activeHold = null;
@@ -1462,7 +1488,7 @@ function frame() {
 document.addEventListener("visibilitychange", () => { if (document.hidden) holding = false; snd.pause(document.hidden); });
 buildWords(); renderSentence();
 resize(); addEventListener("resize", () => { clearTimeout(resize.t); resize.t = setTimeout(resize, 120); });
-if (document.fonts) document.fonts.load('300 100px Cormorant').then(() => document.fonts.load('italic 300 100px Cormorant')).then(() => { drawPoolText(); ribTextLen = 0; }).catch(() => {});
+if (document.fonts) document.fonts.load('300 100px Cormorant').then(() => document.fonts.load('italic 300 100px Cormorant')).then(() => { drawPoolText(); ribTextLen = 0; placeMark(); }).catch(() => {});
 requestAnimationFrame(frame);
 })();
 </script>
