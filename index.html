@@ -336,9 +336,10 @@ body:not(.entered) #gn{pointer-events:none}
 .soon-t{margin:0;font-family:var(--sans);font-weight:300;font-size:clamp(.62rem,.9vw,.78rem);letter-spacing:.62em;text-transform:uppercase;color:var(--ash);opacity:0;animation:soonIn 2.6s var(--slow) 3.4s forwards}
 .side.l .soon-t{margin-right:-.62em}
 .side.r .soon-t{animation-delay:3.75s}
-@keyframes soonIn{from{opacity:0;filter:blur(8px);letter-spacing:.9em}to{opacity:1;filter:none;letter-spacing:.62em}}
+@keyframes soonIn{from{opacity:0;letter-spacing:.9em}to{opacity:1;letter-spacing:.62em}}
 body,body *{cursor:default!important}
 #cur{display:none!important}
+@media (max-width:760px){.side.soon{width:auto}.side.l.soon{right:calc(50% + 26px)}.side.r.soon{left:calc(50% + 26px)}.soon-t{font-size:.7rem;font-weight:400;letter-spacing:.5em;color:rgba(239,230,216,.78);-webkit-font-smoothing:antialiased}.side.l .soon-t{margin-right:-.5em}@keyframes soonIn{from{opacity:0}to{opacity:1}}}
 @media (prefers-reduced-motion:reduce){.soon-t{animation:none;opacity:1}}
 </style>
 <title>Moira · Coming soon</title>
