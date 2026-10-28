@@ -896,7 +896,9 @@
       const box = range.getBoundingClientRect();
       const begin = document.getElementById('begin-wrap');
       begin.style.left = `${box.left}px`;
-      begin.style.top = `${box.bottom + 32}px`;
+      const mark = document.querySelector('.logo-frame img').getBoundingClientRect();
+      const inkWidth = mark.width * (1943 - 290) / 2167;   /* width of the 'Moira' letters inside the image */
+      begin.style.top = `${box.bottom + Math.max(24, inkWidth * 0.161)}px`;
     }
     window.addEventListener('resize', alignBegin);
     window.addEventListener('moira-tagline-complete', alignBegin);
