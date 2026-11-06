@@ -3,6 +3,9 @@
   const holds = ['hold-a', 'hold-b'].map(id => document.getElementById(id));
   const opening = document.getElementById('open-video');
   const begin = document.getElementById('begin-button');
+  // Keep the public entrance closed until launch.
+  const entranceEnabled = false;
+  begin.disabled = !entranceEnabled;
   const cornerLogo = document.getElementById('corner-logo');
   const nav = document.getElementById('main-nav');
   let navTimer;
@@ -29,7 +32,7 @@
   opening.defaultMuted = true;
   let openRequested = false, openBlend = null, opened = false;
   begin.addEventListener('click', async () => {
-    if (openRequested) return;
+    if (!entranceEnabled || openRequested) return;
     openRequested = true;
     resetHeader();
     begin.disabled = true;
@@ -52,7 +55,7 @@
       if (version !== epoch) return;
       resetHeader();
       openRequested = false;
-      begin.disabled = false;
+      begin.disabled = !entranceEnabled;
       window.moiraReveal.reset();
       window.moiraReveal.start();
       window.moiraReveal.showTagline();
@@ -140,7 +143,7 @@
       openRequested = false;
       openBlend = null;
       opened = false;
-      begin.disabled = false;
+      begin.disabled = !entranceEnabled;
       opening.pause();
       opening.style.opacity = '0';
       opening.style.zIndex = '0';
